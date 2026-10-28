@@ -4,9 +4,19 @@
   "private": true,
   "description": "Serves the arena app and connects it to real System One models (local Laya, Jev API). Loopback only.",
   "type": "module",
-  "engines": { "node": ">=22.6" },
+  "engines": {
+    "node": ">=22.6"
+  },
   "scripts": {
     "start": "node --experimental-strip-types --disable-warning=ExperimentalWarning src/server.ts",
-    "test": "node --experimental-strip-types --disable-warning=ExperimentalWarning --test test/*.test.ts"
+    "test": "node --experimental-strip-types --disable-warning=ExperimentalWarning --test test/*.test.ts",
+    "lint": "eslint src test tools",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/node": "^22.20.5",
+    "eslint": "^9.39.5",
+    "typescript": "5.8",
+    "typescript-eslint": "^8.72.1"
   }
 }
