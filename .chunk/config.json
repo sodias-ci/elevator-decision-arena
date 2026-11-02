@@ -32,7 +32,7 @@
     "repo": "elevator-decision-arena"
   },
   "validation": {
-    "sidecarImage": "d5f390fe-9aaa-42ca-b5cd-408497289527"
+    "sidecarImage": "fd6c9391-f580-4604-8f91-5720e384fd9d"
   },
   "orgID": "2dd63740-c14b-4a21-b7f7-e206add7a4d7",
   "stopHookMaxAttempts": 3,
