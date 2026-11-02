@@ -1,0 +1,54 @@
+{
+  "commands": [
+    {
+      "name": "install",
+      "run": "cd runner && npm ci",
+      "remote": true
+    },
+    {
+      "name": "lint",
+      "run": "cd runner && { [ -d node_modules/.bin ] || npm ci --no-audit --no-fund; } && npm run lint",
+      "role": "gate",
+      "timeout": 120,
+      "remote": true
+    },
+    {
+      "name": "typecheck",
+      "run": "cd runner && { [ -d node_modules/.bin ] || npm ci --no-audit --no-fund; } && npm run typecheck",
+      "role": "gate",
+      "timeout": 120,
+      "remote": true
+    },
+    {
+      "name": "test",
+      "run": "cd runner && npm test",
+      "role": "gate",
+      "timeout": 300,
+      "remote": true
+    }
+  ],
+  "vcs": {
+    "org": "sodias-ci",
+    "repo": "elevator-decision-arena"
+  },
+  "validation": {
+    "sidecarImage": "d5f390fe-9aaa-42ca-b5cd-408497289527"
+  },
+  "orgID": "2dd63740-c14b-4a21-b7f7-e206add7a4d7",
+  "stopHookMaxAttempts": 3,
+  "environment": {
+    "stack": "javascript",
+    "setup": [
+      {
+        "name": "system",
+        "command": "curl -fsSL https://deb.nodesource.com/setup_26.x | sudo -E bash - && sudo apt-get install -y nodejs --no-install-recommends && sudo rm -rf /var/lib/apt/lists/*"
+      },
+      {
+        "name": "install",
+        "command": "cd runner && npm ci"
+      }
+    ],
+    "image": "cimg/node",
+    "image_version": "26.13.0"
+  }
+}

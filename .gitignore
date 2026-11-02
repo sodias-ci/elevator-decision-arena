@@ -10,3 +10,6 @@ docs/findings/
 # Generated fine-tuning data and checkpoints (reproducible, large)
 runtime/*/data/
 runtime/*/checkpoints/
+
+# chunk local pool state
+.chunk/*-pool.json
