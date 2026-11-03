@@ -13,3 +13,5 @@ runtime/*/checkpoints/
 
 # chunk local pool state
 .chunk/*-pool.json
+.agents/
+.claude/skills/
