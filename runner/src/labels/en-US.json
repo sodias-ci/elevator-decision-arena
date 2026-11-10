@@ -1,0 +1,5 @@
+{
+  "decision": ["decision", "decisions"],
+  "timeout": ["timeout", "timeouts"],
+  "malformed": ["malformed answer", "malformed answers"]
+}
